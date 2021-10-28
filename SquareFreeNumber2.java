@@ -52,14 +52,8 @@ public class SquareFreeNumber2 {
 	}
 
 	public static int isPrime(int x) {
-		int a;
-		if (x < 10) {
-			a = x;
-		} else {
-			a = (int) (Math.sqrt(x) + 2);
-		}
-
-		for (int divisor = 2; divisor < a; divisor++) {
+		
+		for (int divisor = 2; divisor * divisor <= x; divisor++) {
 			if (x % divisor == 0)
 				return divisor;
 		}
